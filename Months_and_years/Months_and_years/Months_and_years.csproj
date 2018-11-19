@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filereader.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Month.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -19,18 +19,7 @@ namespace Months_and_years
                 identity = value;
             }
         }
-        int minimumTemperature
-        {
-            get
-            {
-                return minimumTemperature;
-            }
-            set
-            {
-                minimumTemperature = value;
-            }
-        }
-        int maximumTemperature
+        float maximumTemperature
         {
             get
             {
@@ -39,6 +28,17 @@ namespace Months_and_years
             set
             {
                 maximumTemperature = value;
+            }
+        }
+        float minimumTemperature
+        {
+            get
+            {
+                return minimumTemperature;
+            }
+            set
+            {
+                minimumTemperature = value;
             }
         }
         int daysOfAirFrost
@@ -52,7 +52,7 @@ namespace Months_and_years
                 daysOfAirFrost = value;
             }
         }
-        int millimitersOfRainfall
+        float millimitersOfRainfall
         {
             get
             {
@@ -63,7 +63,7 @@ namespace Months_and_years
                 millimitersOfRainfall = value;
             }
         }
-        int hoursOfSunshine
+        float hoursOfSunshine
         {
             get
             {
@@ -74,7 +74,7 @@ namespace Months_and_years
                 hoursOfSunshine = value;
             }
         }
-        public Month(int identityIn, int minimumTemperatureIn, int maximumTemperatureIn, int daysOfFrostIn, int millimitersOfRainIn, int hoursOfSunIn)
+        public Month(int identityIn, float minimumTemperatureIn, float maximumTemperatureIn, int daysOfFrostIn, float millimitersOfRainIn, float hoursOfSunIn)
         {
             identity = identityIn;
             minimumTemperature = minimumTemperatureIn;
