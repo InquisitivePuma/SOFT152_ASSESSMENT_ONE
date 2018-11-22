@@ -18,7 +18,7 @@ namespace Months_and_years
             {
                 date = value;
             }
-        } // Current plan is to have date in a DDMMYYYY format int. This is likely to change in order to match how it is stored in the given data.
+        } 
         string description
         {
             get
