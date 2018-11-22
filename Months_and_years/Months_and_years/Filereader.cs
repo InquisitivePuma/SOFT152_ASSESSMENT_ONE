@@ -93,7 +93,7 @@ namespace Months_and_years
 /*Note that this file has not been refactored to be more modular as, 
  * after some consideration, I feel that it is more readable and
  * easier to follow in a linear form. 
- * As well as this, the code her is unlikely to be unused in any smaller
+ * As well as this, the code her is unlikely to be reused in any smaller
  * section than the whole, given how specialised it is to this particular 
  * dataset. 
  */
