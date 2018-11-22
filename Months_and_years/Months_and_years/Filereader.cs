@@ -84,8 +84,16 @@ namespace Months_and_years
             {
                 Console.WriteLine("An error ocurred while executing the data import: {0}", e.Message);
                 Console.WriteLine("Additional details: \n {0}", e);
-                return new Location[0];
+                return new Location[0]; //Null array return indicates failure state.
             }
-}
+        }
     }
 }
+
+/*Note that this file has not been refactored to be more modular as, 
+ * after some consideration, I feel that it is more readable and
+ * easier to follow in a linear form. 
+ * As well as this, the code her is unlikely to be unused in any smaller
+ * section than the whole, given how specialised it is to this particular 
+ * dataset. 
+ */
