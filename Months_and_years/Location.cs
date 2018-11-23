@@ -8,87 +8,53 @@ namespace Months_and_years
 {
     class Location
     {
-        string name
+        string name;
+        string street;
+        string county;
+        string postcode;
+        float lattitude;
+        float longtitude;
+        Year[] years;
+
+        string handleName
         {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
+            get{ return name; }
+            set{ name = value; }
         }
-        string street
+        string handleStreet
         {
-            get
-            {
-                return street;
-            }
-            set
-            {
-                street = value;
-            }
+            get{ return street; }
+            set{ street = value; }
         }
-        string county
+        string handleCounty
         {
-            get
-            {
-                return county;
-            }
-            set
-            {
-                county = value;
-            }
+            get{ return county; }
+            set{ county = value; }
         }
-        string postcode
+        string handlePostcode
         {
-            get
-            {
-                return postcode;
-            }
-            set
-            {
-                postcode = value;
-            }
+            get{ return postcode; }
+            set{ postcode = value; }
         }
-        float lattitude
+        float handleLattitude
         {
-            get
-            {
-                return lattitude;
-            }
-            set
-            {
-                lattitude = value;
-            }
+            get{ return lattitude; }
+            set{ lattitude = value; }
         }
-        float longtitude
+        float handleLongtitude
         {
-            get
-            {
-                return longtitude;
-            }
-            set
-            {
-                longtitude = value;
-            }
+            get{ return longtitude;}
+            set{ longtitude = value; }
         } 
-        Year[] years
+        Year[] handleYears
         {
-            get
-            {
-                return years;
-            }
-            set
-            {
-                years = value;
-            }
+            get{ return years; }
+            set{ years = value; }
         }
         public Year GetYear(int index)
         {
             return years[index];
-        }
+        }//STARTS AT ZERO (0)!
         public Location(string nameIn, string streetIn, string countyIn, string postcodeIn, float lattitudeIn, float longtitudeIn, Year[] yearsIn)
         {
             name = nameIn;

@@ -8,44 +8,30 @@ namespace Months_and_years
 {
     class Year
     {
-        int date
+        int date;
+        string description;
+        Month[] months;
+
+        int handleDate
         {
-            get
-            {
-                return date;
-            }
-            set
-            {
-                date = value;
-            }
+            get{ return date; }
+            set{ date = value; }
         } 
-        string description
+        string handleDescription
         {
-            get
-            {
-                return description;
-            }
-            set
-            {
-                description = value;
-            }
+            get{ return description; }
+            set{ description = value; }
         }
-        Month[] months
+        Month[] handleMonths
         {
-            get
-            {
-                return months;
-            }
-            set
-            {
-                months = value;
-            }
+            get{ return months; }
+            set{ months = value; }
 
         }
         public Month getMonth(int index) 
         {
             return months[index];
-        }//STARTS AT ZERO (0)
+        }//STARTS AT ZERO (0)!
         public Year(int dateIn, string descriptionIn, Month[] monthsIn)
         {
             date = dateIn;

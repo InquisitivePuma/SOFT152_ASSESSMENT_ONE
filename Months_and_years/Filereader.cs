@@ -92,6 +92,7 @@ namespace Months_and_years
             for (int k = 0; k < 12; k++) // for each month in this year
             {
                 monthId = Convert.ToInt32(data.ReadLine());
+                Console.WriteLine(monthId);
                 monthMaxTemp = Convert.ToSingle(data.ReadLine());
                 monthMinTemp = Convert.ToSingle(data.ReadLine());
                 monthDaysOfAirFrost = Convert.ToInt32(data.ReadLine());

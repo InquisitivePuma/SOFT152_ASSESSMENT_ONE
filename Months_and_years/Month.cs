@@ -8,71 +8,42 @@ namespace Months_and_years
 {
     class Month
     {
-        int identity
+        int identity;
+        float maximumTemperature;
+        float minimumTemperature;
+        int daysOfAirFrost;
+        float millimitersOfRainfall;
+        float hoursOfSunshine;
+
+        int handleIdentity
         {
-            get
-            {
-                return identity;
-            }
-            set
-            {
-                identity = value;
-            }
+            get{ return identity; }
+            set{ identity = value; }
         }
-        float maximumTemperature
+        float handleMaximumTemperature
         {
-            get
-            {
-                return maximumTemperature;
-            }
-            set
-            {
-                maximumTemperature = value;
-            }
+            get{ return maximumTemperature; }
+            set{ maximumTemperature = value; }
         }
-        float minimumTemperature
+        float handleMinimumTemperature
         {
-            get
-            {
-                return minimumTemperature;
-            }
-            set
-            {
-                minimumTemperature = value;
-            }
+            get{ return minimumTemperature; }
+            set{ minimumTemperature = value; }
         }
-        int daysOfAirFrost
+        int handleDaysOfAirFrost
         {
-            get
-            {
-                return daysOfAirFrost;
-            }
-            set
-            {
-                daysOfAirFrost = value;
-            }
+            get{ return daysOfAirFrost; }
+            set{ daysOfAirFrost = value; }
         }
-        float millimitersOfRainfall
+        float handleMillimitersOfRainfall
         {
-            get
-            {
-                return millimitersOfRainfall;
-            }
-            set
-            {
-                millimitersOfRainfall = value;
-            }
+            get{ return millimitersOfRainfall; }
+            set{ millimitersOfRainfall = value; }
         }
-        float hoursOfSunshine
+        float handleHoursOfSunshine
         {
-            get
-            {
-                return hoursOfSunshine;
-            }
-            set
-            {
-                hoursOfSunshine = value;
-            }
+            get{ return hoursOfSunshine; }
+            set{ hoursOfSunshine = value; }
         }
         public Month(int identityIn, float minimumTemperatureIn, float maximumTemperatureIn, int daysOfFrostIn, float millimitersOfRainIn, float hoursOfSunIn)
         {
