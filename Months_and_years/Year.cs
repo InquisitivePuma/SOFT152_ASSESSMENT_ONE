@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Months_and_years
 {
-    class Year
+    public class Year
     {
         int date;
         string description;
         Month[] months;
 
-        int handleDate
+        public int handleDate
         {
             get{ return date; }
             set{ date = value; }
-        } 
-        string handleDescription
+        }
+        public string handleDescription
         {
             get{ return description; }
             set{ description = value; }
         }
-        Month[] handleMonths
+        public Month[] handleMonths
         {
             get{ return months; }
             set{ months = value; }

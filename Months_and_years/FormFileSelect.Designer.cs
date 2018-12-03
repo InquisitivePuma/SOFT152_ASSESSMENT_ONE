@@ -56,6 +56,7 @@
             this.fileOpenBox.Size = new System.Drawing.Size(274, 20);
             this.fileOpenBox.TabIndex = 1;
             this.fileOpenBox.Text = "C:\\\\";
+            this.fileOpenBox.TextChanged += new System.EventHandler(this.fileOpenBox_TextChanged);
             // 
             // label1
             // 
@@ -66,7 +67,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Please select the data file.";
             // 
-            // Form1
+            // FormFileSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,7 +75,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fileOpenBox);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "FormFileSelect";
             this.Text = "Weather Data Management Program";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

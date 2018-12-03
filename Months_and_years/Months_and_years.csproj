@@ -46,11 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filereader.cs" />
+    <Compile Include="FormMonthsDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMonthsDisplay.Designer.cs">
+      <DependentUpon>FormMonthsDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLocationDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLocationDisplay.Designer.cs">
       <DependentUpon>FormLocationDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormYearDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormYearDisplay.Designer.cs">
+      <DependentUpon>FormYearDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="Location.cs" />
     <Compile Include="Month.cs" />
@@ -63,11 +75,17 @@
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Year.cs" />
+    <EmbeddedResource Include="FormMonthsDisplay.resx">
+      <DependentUpon>FormMonthsDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFileSelect.resx">
       <DependentUpon>FormFileSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLocationDisplay.resx">
       <DependentUpon>FormLocationDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormYearDisplay.resx">
+      <DependentUpon>FormYearDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

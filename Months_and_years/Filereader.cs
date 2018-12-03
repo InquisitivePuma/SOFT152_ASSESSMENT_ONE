@@ -17,7 +17,7 @@ namespace Months_and_years
         static int monthId;
         static float monthMaxTemp;
         static float monthMinTemp;
-        static int monthDaysOfAirFrost;
+        static float monthDaysOfAirFrost;
         static float monthMilsOfRainfall;
         static float monthHoursOfSunshine;
         static int numberOfLocations;
@@ -41,7 +41,7 @@ namespace Months_and_years
 
                     ReadLocations(dataFile);
 
-                    return parsedLocations;
+                                        return parsedLocations;
                 }
             }
             catch (Exception e)
@@ -76,9 +76,11 @@ namespace Months_and_years
         {
             for (int j = 0; j < numberOfYears; j++) // for each year in this location
             {
-                parsedMonths = new Month[12]; // each iteration gets a fresh array
                 yearDescription = data.ReadLine();
                 yearId = Convert.ToInt32(data.ReadLine());
+
+                parsedMonths = new Month[12]; // each iteration gets a fresh array
+
                 ReadMonths(data);
 
                 thisYear = new Year(yearId, yearDescription, parsedMonths);
@@ -92,15 +94,17 @@ namespace Months_and_years
             for (int k = 0; k < 12; k++) // for each month in this year
             {
                 monthId = Convert.ToInt32(data.ReadLine());
-                Console.WriteLine(monthId);
                 monthMaxTemp = Convert.ToSingle(data.ReadLine());
                 monthMinTemp = Convert.ToSingle(data.ReadLine());
-                monthDaysOfAirFrost = Convert.ToInt32(data.ReadLine());
+                monthDaysOfAirFrost = Convert.ToSingle(data.ReadLine());
                 monthMilsOfRainfall = Convert.ToSingle(data.ReadLine());
                 monthHoursOfSunshine = Convert.ToSingle(data.ReadLine());
+                if (k < 11) { data.ReadLine(); } // This skips the repeated yearID, which we only need once per year.
                 thisMonth = new Month(monthId, monthMaxTemp, monthMinTemp, monthDaysOfAirFrost, monthMilsOfRainfall, monthHoursOfSunshine);
                 parsedMonths[k] = thisMonth;
             }
+
+
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Months_and_years
             {
                 fileOpenBox.Text = openFileDialog.FileName;
                 Location[] data = Filereader.readFile(openFileDialog.FileName);
-                var formLocationDisplay = new FormLocationDisplay();
+                var formLocationDisplay = new FormLocationDisplay(data);
                 formLocationDisplay.Location = this.Location;
                 formLocationDisplay.StartPosition = FormStartPosition.Manual;
                 this.Hide();
@@ -38,6 +38,11 @@ namespace Months_and_years
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileOpenBox_TextChanged(object sender, EventArgs e)
         {
 
         }

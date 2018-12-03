@@ -6,46 +6,46 @@ using System.Threading.Tasks;
 
 namespace Months_and_years
 {
-    class Month
+    public class Month
     {
         int identity;
         float maximumTemperature;
         float minimumTemperature;
-        int daysOfAirFrost;
+        float daysOfAirFrost;
         float millimitersOfRainfall;
         float hoursOfSunshine;
 
-        int handleIdentity
+        public int handleIdentity
         {
             get{ return identity; }
             set{ identity = value; }
         }
-        float handleMaximumTemperature
+        public float handleMaximumTemperature
         {
             get{ return maximumTemperature; }
             set{ maximumTemperature = value; }
         }
-        float handleMinimumTemperature
+        public float handleMinimumTemperature
         {
             get{ return minimumTemperature; }
             set{ minimumTemperature = value; }
         }
-        int handleDaysOfAirFrost
+        public float handleDaysOfAirFrost
         {
             get{ return daysOfAirFrost; }
             set{ daysOfAirFrost = value; }
         }
-        float handleMillimitersOfRainfall
+        public float handleMillimitersOfRainfall
         {
             get{ return millimitersOfRainfall; }
             set{ millimitersOfRainfall = value; }
         }
-        float handleHoursOfSunshine
+        public float handleHoursOfSunshine
         {
             get{ return hoursOfSunshine; }
             set{ hoursOfSunshine = value; }
         }
-        public Month(int identityIn, float minimumTemperatureIn, float maximumTemperatureIn, int daysOfFrostIn, float millimitersOfRainIn, float hoursOfSunIn)
+        public Month(int identityIn, float minimumTemperatureIn, float maximumTemperatureIn, float daysOfFrostIn, float millimitersOfRainIn, float hoursOfSunIn)
         {
             identity = identityIn;
             minimumTemperature = minimumTemperatureIn;

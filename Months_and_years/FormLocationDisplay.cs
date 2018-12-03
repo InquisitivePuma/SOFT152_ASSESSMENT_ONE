@@ -12,9 +12,13 @@ namespace Months_and_years
 {
     public partial class FormLocationDisplay : Form
     {
-        public FormLocationDisplay()
+        static Location[] locations;
+
+        public FormLocationDisplay(Location[] data)
         {
             InitializeComponent();
+            PopulateDataGridView(data);
+            locations = data;
         }
 
         private void FormLocationDisplay_Load(object sender, EventArgs e)
@@ -32,6 +36,51 @@ namespace Months_and_years
         }
 
         private void buttonOpenLocation_Click(object sender, EventArgs e)
+        {
+            int index = dataGridViewLocations.CurrentCell.RowIndex;
+            var formYearDisplay = new FormYearDisplay(locations, index);
+            formYearDisplay.Location = this.Location;
+            formYearDisplay.StartPosition = FormStartPosition.Manual;
+            this.Hide();
+            formYearDisplay.Show();
+        }
+        
+        private void PopulateDataGridView(Location[] data)
+        {
+            this.Controls.Add(dataGridViewLocations);
+            String[] row = new string[2];
+
+            dataGridViewLocations.ColumnCount = 2;
+            dataGridViewLocations.RowHeadersVisible = true;
+            dataGridViewLocations.Columns[0].Name = "Location Name";
+            dataGridViewLocations.Columns[1].Name = "Location Postcode";
+            dataGridViewLocations.Columns[0].Width = (dataGridViewLocations.Width/2) - 15;
+            dataGridViewLocations.Columns[1].Width = (dataGridViewLocations.Width / 2) - 15;
+
+            dataGridViewLocations.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewLocations.MultiSelect = false;
+
+            Console.WriteLine("Debug: dataGrid has been setup.");
+
+            foreach (Location l in data)
+            {
+                row[0] = l.handleName;
+                row[1] = l.handlePostcode;
+                dataGridViewLocations.Rows.Add(row);
+                Console.WriteLine("Debug: A location has been added to the dataGrid");
+
+            }
+
+            dataGridViewLocations.Columns[0].DisplayIndex = 0;
+            dataGridViewLocations.Columns[1].DisplayIndex = 1;
+        }
+
+        private void dataGridViewLocations_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void labelLocations_Click(object sender, EventArgs e)
         {
 
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Months_and_years
 {
-    class Location
+    public class Location
     {
         string name;
         string street;
@@ -16,37 +16,37 @@ namespace Months_and_years
         float longtitude;
         Year[] years;
 
-        string handleName
+        public string handleName
         {
             get{ return name; }
             set{ name = value; }
         }
-        string handleStreet
+        public string handleStreet
         {
             get{ return street; }
             set{ street = value; }
         }
-        string handleCounty
+        public string handleCounty
         {
             get{ return county; }
             set{ county = value; }
         }
-        string handlePostcode
+        public string handlePostcode
         {
             get{ return postcode; }
             set{ postcode = value; }
         }
-        float handleLattitude
+        public float handleLattitude
         {
             get{ return lattitude; }
             set{ lattitude = value; }
         }
-        float handleLongtitude
+        public float handleLongtitude
         {
             get{ return longtitude;}
             set{ longtitude = value; }
-        } 
-        Year[] handleYears
+        }
+        public Year[] handleYears
         {
             get{ return years; }
             set{ years = value; }

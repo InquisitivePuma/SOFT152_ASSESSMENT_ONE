@@ -30,9 +30,9 @@
         {
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonOpenLocation = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLocations = new System.Windows.Forms.DataGridView();
             this.labelLocations = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocations)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -47,21 +47,22 @@
             // 
             // buttonOpenLocation
             // 
-            this.buttonOpenLocation.Location = new System.Drawing.Point(12, 410);
+            this.buttonOpenLocation.Location = new System.Drawing.Point(12, 405);
             this.buttonOpenLocation.Name = "buttonOpenLocation";
-            this.buttonOpenLocation.Size = new System.Drawing.Size(776, 23);
+            this.buttonOpenLocation.Size = new System.Drawing.Size(776, 33);
             this.buttonOpenLocation.TabIndex = 1;
             this.buttonOpenLocation.Text = "Click here to display additional data for the selected location.";
             this.buttonOpenLocation.UseVisualStyleBackColor = true;
             this.buttonOpenLocation.Click += new System.EventHandler(this.buttonOpenLocation_Click);
             // 
-            // dataGridView1
+            // dataGridViewLocations
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 342);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLocations.Location = new System.Drawing.Point(12, 52);
+            this.dataGridViewLocations.Name = "dataGridViewLocations";
+            this.dataGridViewLocations.Size = new System.Drawing.Size(776, 342);
+            this.dataGridViewLocations.TabIndex = 2;
+            this.dataGridViewLocations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLocations_CellContentClick);
             // 
             // labelLocations
             // 
@@ -72,6 +73,7 @@
             this.labelLocations.TabIndex = 3;
             this.labelLocations.Text = "Select a location in the below table in order to view or edit additional data for" +
     " that location.";
+            this.labelLocations.Click += new System.EventHandler(this.labelLocations_Click);
             // 
             // FormLocationDisplay
             // 
@@ -79,13 +81,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelLocations);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewLocations);
             this.Controls.Add(this.buttonOpenLocation);
             this.Controls.Add(this.buttonBack);
             this.Name = "FormLocationDisplay";
             this.Text = "Weather Data Management Program";
             this.Load += new System.EventHandler(this.FormLocationDisplay_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,7 +97,7 @@
 
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonOpenLocation;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewLocations;
         private System.Windows.Forms.Label labelLocations;
     }
 }
