@@ -37,8 +37,8 @@ namespace Months_and_years
 
         private void buttonOpenLocation_Click(object sender, EventArgs e)
         {
-            int index = dataGridViewLocations.CurrentCell.RowIndex;
-            var formYearDisplay = new FormYearDisplay(locations, index);
+            int location = dataGridViewLocations.CurrentCellAddress.Y;
+            var formYearDisplay = new FormYearDisplay(locations, location);
             formYearDisplay.Location = this.Location;
             formYearDisplay.StartPosition = FormStartPosition.Manual;
             this.Hide();
@@ -59,15 +59,12 @@ namespace Months_and_years
 
             dataGridViewLocations.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewLocations.MultiSelect = false;
-
-            Console.WriteLine("Debug: dataGrid has been setup.");
-
+            
             foreach (Location l in data)
             {
                 row[0] = l.handleName;
                 row[1] = l.handlePostcode;
                 dataGridViewLocations.Rows.Add(row);
-                Console.WriteLine("Debug: A location has been added to the dataGrid");
 
             }
 

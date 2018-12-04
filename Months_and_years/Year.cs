@@ -28,15 +28,18 @@ namespace Months_and_years
             set{ months = value; }
 
         }
-        public Month getMonth(int index) 
+        public Month GetMonth(int index)
         {
             return months[index];
         }//STARTS AT ZERO (0)!
+
         public Year(int dateIn, string descriptionIn, Month[] monthsIn)
         {
             date = dateIn;
             description = descriptionIn;
             months = monthsIn;
         }
+
+        public Year(){}
     }
 }

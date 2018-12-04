@@ -14,6 +14,8 @@ namespace Months_and_years
         float daysOfAirFrost;
         float millimitersOfRainfall;
         float hoursOfSunshine;
+        static string[] names = { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
 
         public int handleIdentity
         {
@@ -45,6 +47,11 @@ namespace Months_and_years
             get{ return hoursOfSunshine; }
             set{ hoursOfSunshine = value; }
         }
+        public string handleName
+        {
+            get { return names[identity-1];  } // Arrays start at 0, the month identities start at 1.
+        }
+
         public Month(int identityIn, float minimumTemperatureIn, float maximumTemperatureIn, float daysOfFrostIn, float millimitersOfRainIn, float hoursOfSunIn)
         {
             identity = identityIn;
@@ -54,6 +61,6 @@ namespace Months_and_years
             millimitersOfRainfall = millimitersOfRainIn;
             hoursOfSunshine = hoursOfSunIn;
         }
-
+        public Month(){}
     }
 }

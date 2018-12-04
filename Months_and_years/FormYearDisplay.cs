@@ -11,12 +11,12 @@ namespace Months_and_years
     public partial class FormYearDisplay : Form
     {
         static Location[] locations;
-        static int selection;
+        static int location;
         public FormYearDisplay(Location[] data, int index)
         {
             InitializeComponent();
             locations = data;
-            selection = index;
+            location = index;
             PopulateDataGridView(locations);
         }
 
@@ -41,33 +41,29 @@ namespace Months_and_years
 
         private void PopulateDataGridView(Location[] data)
         {
-            this.Controls.Add(dataGridView2);
+            this.Controls.Add(dataGridViewYears);
             String[] row = new string[2];
 
-            dataGridView2.ColumnCount = 2;
-            dataGridView2.RowHeadersVisible = true;
-            dataGridView2.Columns[0].Name = "Year";
-            dataGridView2.Columns[1].Name = "Description";
-            dataGridView2.Columns[0].Width = (dataGridView2.Width / 4) - 15;
-            dataGridView2.Columns[1].Width = ((dataGridView2.Width / 4 ) * 3) - 15;
+            dataGridViewYears.ColumnCount = 2;
+            dataGridViewYears.RowHeadersVisible = true;
+            dataGridViewYears.Columns[0].Name = "Year";
+            dataGridViewYears.Columns[1].Name = "Description";
+            dataGridViewYears.Columns[0].Width = (dataGridViewYears.Width / 4) - 15;
+            dataGridViewYears.Columns[1].Width = ((dataGridViewYears.Width / 4 ) * 3) - 15;
 
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.MultiSelect = false;
+            dataGridViewYears.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewYears.MultiSelect = false;
 
-            Console.WriteLine("Debug: dataGrid has been setup.");
-
-            foreach (Year y in data[selection].handleYears)
+            foreach (Year y in data[location].handleYears)
             {
                 row[0] = Convert.ToString(y.handleDate);
                 row[1] = y.handleDescription;
 
-                dataGridView2.Rows.Add(row);
-                Console.WriteLine("Debug: A year has been added to the dataGrid");
-
+                dataGridViewYears.Rows.Add(row);
             }
 
-            dataGridView2.Columns[0].DisplayIndex = 0;
-            dataGridView2.Columns[1].DisplayIndex = 1;
+            dataGridViewYears.Columns[0].DisplayIndex = 0;
+            dataGridViewYears.Columns[1].DisplayIndex = 1;
         }
 
         private void dataGridViewLocations_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -80,5 +76,34 @@ namespace Months_and_years
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int year = dataGridViewYears.CurrentCellAddress.Y;
+            var formMonthDisplay = new FormMonthsDisplay(locations, location, year);
+            formMonthDisplay.Location = this.Location;
+            formMonthDisplay.StartPosition = FormStartPosition.Manual;
+            this.Hide();
+            formMonthDisplay.Show();
+        }
+
+        private void dataGridViewYears_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormYearDisplay_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddYear_Click(object sender, EventArgs e)
+        {
+
+            var formYearEdit = new FormYearEdit(locations, location);
+            formYearEdit.Location = this.Location;
+            formYearEdit.StartPosition = FormStartPosition.Manual;
+            this.Hide();
+            formYearEdit.Show();
+        }
     }
 }

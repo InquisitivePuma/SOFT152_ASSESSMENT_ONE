@@ -32,3 +32,5 @@ C:\Users\cellv\Desktop\SOFT152_ASSESSMENT_ONE\Months_and_years\obj\Debug\Months_
 C:\Users\cellv\Desktop\SOFT152_ASSESSMENT_ONE\Months_and_years\obj\Debug\Months_and_years.pdb
 C:\Users\cellv\Desktop\SOFT152_ASSESSMENT_ONE\Months_and_years\obj\Debug\Months_and_years.FormYearDisplay.resources
 C:\Users\cellv\Desktop\SOFT152_ASSESSMENT_ONE\Months_and_years\obj\Debug\Months_and_years.FormMonthsDisplay.resources
+C:\Users\cellv\Desktop\SOFT152_ASSESSMENT_ONE\Months_and_years\obj\Debug\Months_and_years.FormMonthsEdit.resources
+C:\Users\cellv\Desktop\SOFT152_ASSESSMENT_ONE\Months_and_years\obj\Debug\Months_and_years.FormYearEdit.resources

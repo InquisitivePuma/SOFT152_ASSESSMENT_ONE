@@ -28,7 +28,7 @@ namespace Months_and_years
             if (result == DialogResult.OK)
             {
                 fileOpenBox.Text = openFileDialog.FileName;
-                Location[] data = Filereader.readFile(openFileDialog.FileName);
+                Location[] data = Filehandler.ReadFile(openFileDialog.FileName);
                 var formLocationDisplay = new FormLocationDisplay(data);
                 formLocationDisplay.Location = this.Location;
                 formLocationDisplay.StartPosition = FormStartPosition.Manual;

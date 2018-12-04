@@ -55,6 +55,7 @@ namespace Months_and_years
         {
             return years[index];
         }//STARTS AT ZERO (0)!
+
         public Location(string nameIn, string streetIn, string countyIn, string postcodeIn, float lattitudeIn, float longtitudeIn, Year[] yearsIn)
         {
             name = nameIn;
@@ -64,6 +65,29 @@ namespace Months_and_years
             lattitude = lattitudeIn;
             longtitude = longtitudeIn;
             years = yearsIn;
+        }
+        public Location() { }
+
+        public void AddYear(Year yearToAdd)
+        {
+            Year[] newYears = new Year[this.years.Length+1];
+            int i = 0;
+            bool unadded = false;
+            foreach (Year y in years)
+            {
+                if ( ( unadded && ( y.handleDate < yearToAdd.handleDate ) ) || !unadded ) 
+                // if we haven't added the new year but the current year is lower than the new year, or if we've already added the new year.
+                {
+                    newYears[i] = y;
+                }
+                else
+                {
+                    newYears[i] = yearToAdd;
+                    newYears[++i] = y;
+                }
+
+                i++;                
+            }
         }
     }
 }

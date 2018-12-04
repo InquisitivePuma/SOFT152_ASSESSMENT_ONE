@@ -57,6 +57,7 @@
             // 
             // dataGridViewLocations
             // 
+            this.dataGridViewLocations.AllowUserToAddRows = false;
             this.dataGridViewLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLocations.Location = new System.Drawing.Point(12, 52);
             this.dataGridViewLocations.Name = "dataGridViewLocations";
