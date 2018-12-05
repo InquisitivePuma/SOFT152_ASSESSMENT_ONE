@@ -12,32 +12,28 @@ namespace Months_and_years
     {
         static Location[] locations;
         static int location;
+
         public FormYearDisplay(Location[] data, int index)
         {
-            InitializeComponent();
             locations = data;
             location = index;
+            InitializeComponent();
             PopulateDataGridView(locations);
-        }
+        } // Puts the passed data into statics for this class, then calls other initialisation functions (PopulateDataGridView and InitialiseComponents, in this case.)
 
         private void FormLocationDisplay_Load(object sender, EventArgs e)
         {
 
-        }
+        } // Nothing happens here when the form loads. This code was auto-generated, and unless you're willing to engage with tomfoolery with the design tool, it stays.
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e)
         {
             var formLocationDisplay = new FormLocationDisplay(locations);
             formLocationDisplay.Location = this.Location;
             formLocationDisplay.StartPosition = FormStartPosition.Manual;
             this.Hide();
             formLocationDisplay.Show();
-        }
-
-        private void buttonOpenLocation_Click(object sender, EventArgs e)
-        {
-
-        }
+        } // Creates a copy of the previous form (location display) and sets it to the same location as this form, with the same information as this form has.
 
         private void PopulateDataGridView(Location[] data)
         {
@@ -64,19 +60,9 @@ namespace Months_and_years
 
             dataGridViewYears.Columns[0].DisplayIndex = 0;
             dataGridViewYears.Columns[1].DisplayIndex = 1;
-        }
+        } // Iterates through the relevant data (The years' dates and descriptions) and copies it into row arrays which are then added to the data grid.
 
-        private void dataGridViewLocations_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void labelLocations_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonDisplay_Click(object sender, EventArgs e)
         {
             int year = dataGridViewYears.CurrentCellAddress.Y;
             var formMonthDisplay = new FormMonthsDisplay(locations, location, year);
@@ -84,17 +70,7 @@ namespace Months_and_years
             formMonthDisplay.StartPosition = FormStartPosition.Manual;
             this.Hide();
             formMonthDisplay.Show();
-        }
-
-        private void dataGridViewYears_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FormYearDisplay_Load(object sender, EventArgs e)
-        {
-
-        }
+        } // Creates a new MonthDisplay form, passes it the index of the current selected location, month and year, the main data structure, and sets it to the current position of the form.
 
         private void buttonAddYear_Click(object sender, EventArgs e)
         {
@@ -104,6 +80,6 @@ namespace Months_and_years
             formYearEdit.StartPosition = FormStartPosition.Manual;
             this.Hide();
             formYearEdit.Show();
-        }
+        } // Creates a new YearEdit form, passes it the index of the currently selected location and year with the main data structure, and sets it to the current position of the form. 
     }
 }

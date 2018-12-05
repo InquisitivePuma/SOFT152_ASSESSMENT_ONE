@@ -8,6 +8,8 @@ namespace Months_and_years
 {
     public class Month
     {
+        #region attributes
+
         int identity;
         float maximumTemperature;
         float minimumTemperature;
@@ -15,7 +17,6 @@ namespace Months_and_years
         float millimitersOfRainfall;
         float hoursOfSunshine;
         static string[] names = { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-
 
         public int handleIdentity
         {
@@ -49,8 +50,12 @@ namespace Months_and_years
         }
         public string handleName
         {
-            get { return names[identity-1];  } // Arrays start at 0, the month identities start at 1.
+            get { return names[identity-1];  } // Arrays start at 0, the month identities start at 1. No need for a set; the name must be linked ot the id.
         }
+
+        #endregion
+        // Above are attributes and their handlers. Variable declarations, getters, setters, boring stuff.
+        // There is also a static array matching month ids to month names; the month's aren't recorded my name in the data, but being able to display them as such is useful.
 
         public Month(int identityIn, float minimumTemperatureIn, float maximumTemperatureIn, float daysOfFrostIn, float millimitersOfRainIn, float hoursOfSunIn)
         {
@@ -61,6 +66,7 @@ namespace Months_and_years
             millimitersOfRainfall = millimitersOfRainIn;
             hoursOfSunshine = hoursOfSunIn;
         }
-        public Month(){}
+        public Month(){ }
+        // Two constructors: One for setting the attributes there and then, one for doing them later (i.e. creating a null month). Allows for some cleaner code, and shows off polymorphism.
     }
 }

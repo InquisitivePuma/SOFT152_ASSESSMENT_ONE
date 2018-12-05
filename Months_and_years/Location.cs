@@ -8,6 +8,9 @@ namespace Months_and_years
 {
     public class Location
     {
+
+        #region attributes
+
         string name;
         string street;
         string county;
@@ -56,6 +59,9 @@ namespace Months_and_years
             return years[index];
         }//STARTS AT ZERO (0)!
 
+        #endregion
+        // Above are attributes and their handlers. Variable declarations, getters, setters, boring stuff.
+
         public Location(string nameIn, string streetIn, string countyIn, string postcodeIn, float lattitudeIn, float longtitudeIn, Year[] yearsIn)
         {
             name = nameIn;
@@ -67,6 +73,7 @@ namespace Months_and_years
             years = yearsIn;
         }
         public Location() { }
+        // Two constructors: One for setting the attributes there and then, one for doing them later (i.e. creating a null location). Allows for some cleaner code, and shows off polymorphism.
 
         public void AddYear(Year yearToAdd)
         {
@@ -88,6 +95,6 @@ namespace Months_and_years
 
                 i++;                
             }
-        }
+        } // Increases the length of the years array by one, adding in the new year immediately before the first year with a date equal to or larger than its own.
     }
 }

@@ -20,8 +20,7 @@ namespace Months_and_years
             location = previousIndex;
             year = index;
             PopulateDataGridView();
-            ShowYearDescription();
-        }
+        } // Puts the passed data into statics for this class, then calls other initialisation functions (InitialiseComponents and PopulateDatGridView in this case.)
 
         private void PopulateDataGridView()
         {
@@ -42,9 +41,9 @@ namespace Months_and_years
             Year thisYear = locations[location].GetYear(year);
             Month[] months = thisYear.handleMonths;
 
-            foreach (Month m in months)                                                  // This is getting messy, I know, but it doesn't go any deeper 
-            {                                                                            // and we have to hold onto all the data in order to reconstruct the forms as we go back up                                    
-                row[0] = Convert.ToString(m.handleIdentity);                             // or user edits won't show until the program is reloaded.
+            foreach (Month m in months)                                                  
+            {                                                                                                           
+                row[0] = Convert.ToString(m.handleIdentity);                             
                 row[1] = m.handleName;
 
                 dataGridViewMonths.Rows.Add(row);
@@ -53,24 +52,17 @@ namespace Months_and_years
 
             dataGridViewMonths.Columns[0].DisplayIndex = 0;
             dataGridViewMonths.Columns[1].DisplayIndex = 1;
-        }
+        } // Iterates through the relevant data (The months' identities and names) and copies it into row arrays which are then added to the data grid.
 
-        private void ShowYearDescription()
-        {
-            textBoxDescription.Text = locations[location].handleYears[year].handleDescription;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e)
         {
             var formYearDisplay = new FormYearDisplay(locations, location);
             formYearDisplay.Location = this.Location;
             formYearDisplay.StartPosition = FormStartPosition.Manual;
             this.Hide();
             formYearDisplay.Show();
-        }
-
-
-
+        } // Creates a copy of the previous form (year display) and sets it to the same location as this form, with the same information as this form has.
+               
         private void buttonEditMonth_Click(object sender, EventArgs e)
         {
             int month = dataGridViewMonths.CurrentCellAddress.Y;
@@ -79,17 +71,16 @@ namespace Months_and_years
             formMonthEdit.StartPosition = FormStartPosition.Manual;
             this.Hide();
             formMonthEdit.Show();
-        }
-
-
+        }// Creates a new MonthEdit form, passes it the index of the currently selected location, year and month with the main data structure, then sets it to the current position of the form. 
+        
         private void buttonEditDescription_Click(object sender, EventArgs e)
         {
             locations[location].handleYears[year].handleDescription = textBoxDescription.Text;
-        }
+        } // Sets the description of the currently selected year to the contents of the textbox.
 
         private void FormMonthsDisplay_Load(object sender, EventArgs e)
         {
-
-        }
+            textBoxDescription.Text = locations[location].handleYears[year].handleDescription;
+        } //   ***  THIS LOAD FUNCTION HAS PURPOSE.  ***   It sets the data in the textboxe to the description for the currently selected year.
     }
 }

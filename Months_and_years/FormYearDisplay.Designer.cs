@@ -44,7 +44,7 @@
             this.buttonBackToLocations.TabIndex = 0;
             this.buttonBackToLocations.Text = "Back";
             this.buttonBackToLocations.UseVisualStyleBackColor = true;
-            this.buttonBackToLocations.Click += new System.EventHandler(this.button1_Click);
+            this.buttonBackToLocations.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // button3
             // 
@@ -54,7 +54,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Click here to display additional data for the selected year.";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.buttonDisplay_Click);
             // 
             // label2
             // 

@@ -21,7 +21,7 @@ namespace Months_and_years
             location = firstIndex;
             year = previousIndex;
             InitializeComponent();
-        }
+        } // Puts the passed data into statics for this class, then calls other initialisation functions (InitialiseComponents, in this case.)
 
         private void FormMonthsEdit_Load(object sender, EventArgs e)
         {
@@ -33,16 +33,16 @@ namespace Months_and_years
             textBoxAirFrost.Text = Convert.ToString(thisMonth.handleDaysOfAirFrost);
             textBoxRainfall.Text = Convert.ToString(thisMonth.handleMillimitersOfRainfall);
             textBoxSunshine.Text = Convert.ToString(thisMonth.handleHoursOfSunshine);
-        }
+        } //   ***  THIS LOAD FUNCTION HAS PURPOSE.  ***   It sets the data in the textboxes to the correct data for the currently slected month.
 
-        private void buttonBackMonthEdit_Click(object sender, EventArgs e)
+        private void buttonBackMonthEdit_Click(object sender, EventArgs e) 
         {
             var formMonthDisplay = new FormMonthsDisplay(locations, location, year);
-            formMonthDisplay.Location = this.Location;
+            formMonthDisplay.Location = this.Location; 
             formMonthDisplay.StartPosition = FormStartPosition.Manual;
             this.Hide();
             formMonthDisplay.Show();
-        }
+        } // Creates a copy of the previous form(month display) and sets it to the same location as this form, with the same information as this form has.
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -56,6 +56,6 @@ namespace Months_and_years
 
             locations[location].handleYears[year].handleMonths[month] = saveMonth;
             Filehandler.SaveFile(locations);
-        }
+        } // Sets the attributes of the currently selected month in the man data structure to be equal to the values currently in the form, then calls the SaveFile function.
     }
 }

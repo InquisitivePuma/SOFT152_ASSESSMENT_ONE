@@ -55,7 +55,7 @@
             this.buttonBackMonths.TabIndex = 1;
             this.buttonBackMonths.Text = "Back";
             this.buttonBackMonths.UseVisualStyleBackColor = true;
-            this.buttonBackMonths.Click += new System.EventHandler(this.button2_Click);
+            this.buttonBackMonths.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // button3
             // 
