@@ -834,7 +834,6 @@
             this.Controls.Add(this.textBoxDate);
             this.Controls.Add(this.textBoxDescription);
             this.Name = "FormYearEdit";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

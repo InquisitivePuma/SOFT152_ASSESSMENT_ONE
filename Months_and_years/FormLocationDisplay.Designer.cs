@@ -63,7 +63,6 @@
             this.dataGridViewLocations.Name = "dataGridViewLocations";
             this.dataGridViewLocations.Size = new System.Drawing.Size(776, 342);
             this.dataGridViewLocations.TabIndex = 2;
-            this.dataGridViewLocations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLocations_CellContentClick);
             // 
             // labelLocations
             // 
@@ -74,7 +73,6 @@
             this.labelLocations.TabIndex = 3;
             this.labelLocations.Text = "Select a location in the below table in order to view or edit additional data for" +
     " that location.";
-            this.labelLocations.Click += new System.EventHandler(this.labelLocations_Click);
             // 
             // FormLocationDisplay
             // 
@@ -87,7 +85,6 @@
             this.Controls.Add(this.buttonBack);
             this.Name = "FormLocationDisplay";
             this.Text = "Weather Data Management Program";
-            this.Load += new System.EventHandler(this.FormLocationDisplay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -21,11 +21,6 @@ namespace Months_and_years
             PopulateDataGridView(locations);
         } // Puts the passed data into statics for this class, then calls other initialisation functions (PopulateDataGridView and InitialiseComponents, in this case.)
 
-        private void FormLocationDisplay_Load(object sender, EventArgs e)
-        {
-
-        } // Nothing happens here when the form loads. This code was auto-generated, and unless you're willing to engage with tomfoolery with the design tool, it stays.
-
         private void buttonBack_Click(object sender, EventArgs e)
         {
             var formLocationDisplay = new FormLocationDisplay(locations);

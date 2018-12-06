@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.fileOpenBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonLaunch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -56,7 +57,6 @@
             this.fileOpenBox.Size = new System.Drawing.Size(274, 20);
             this.fileOpenBox.TabIndex = 1;
             this.fileOpenBox.Text = "C:\\\\";
-            this.fileOpenBox.TextChanged += new System.EventHandler(this.fileOpenBox_TextChanged);
             // 
             // label1
             // 
@@ -67,17 +67,27 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Please select the data file.";
             // 
+            // buttonLaunch
+            // 
+            this.buttonLaunch.Location = new System.Drawing.Point(232, 274);
+            this.buttonLaunch.Name = "buttonLaunch";
+            this.buttonLaunch.Size = new System.Drawing.Size(275, 25);
+            this.buttonLaunch.TabIndex = 3;
+            this.buttonLaunch.Text = "Launch";
+            this.buttonLaunch.UseVisualStyleBackColor = true;
+            this.buttonLaunch.Click += new System.EventHandler(this.buttonLaunch_Click);
+            // 
             // FormFileSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonLaunch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fileOpenBox);
             this.Controls.Add(this.button1);
             this.Name = "FormFileSelect";
             this.Text = "Weather Data Management Program";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,6 +99,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox fileOpenBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonLaunch;
     }
 }
 

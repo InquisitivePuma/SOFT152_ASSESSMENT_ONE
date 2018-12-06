@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Months_and_years
@@ -18,11 +13,6 @@ namespace Months_and_years
             locations = data;
             location = index;
         } // Puts the passed data into statics for this class, then calls other initialisation functions (InitialiseComponents, in this case.)
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        } // Nothing happens here when the form loads. This code was auto-generated, and unless you're willing to engage with tomfoolery with the design tool, it stays.
 
         private void buttonBackToYears_Click(object sender, EventArgs e)
         {
@@ -160,14 +150,22 @@ namespace Months_and_years
 
                 locations[location].AddYear(savedYear);
                 Filehandler.SaveFile(locations);
+                string message = "The year has been saved.";
+                string title = "Success!";
+                MessageBox.Show(message, title);
+
             }
             catch (Exception badInputError)
             {
                 Console.WriteLine("An error ocurred while rading the form: {0}", badInputError.Message);
                 Console.WriteLine("Additional details: \n {0}", badInputError);
                 Console.WriteLine("It's probably because you entered something wrong, user.");
+                string message = "The year has not been saved due to an invalid input.";
+                string title = "Error.";
+                MessageBox.Show(message, title);
             }
 
         } // Saves the data entered into this form into a new year, using the Location class's AddYear function.
+      
     }
 }

@@ -73,7 +73,6 @@
             this.dataGridViewYears.Name = "dataGridViewYears";
             this.dataGridViewYears.Size = new System.Drawing.Size(769, 317);
             this.dataGridViewYears.TabIndex = 5;
-            this.dataGridViewYears.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewYears_CellContentClick);
             // 
             // buttonAddYear
             // 
@@ -95,7 +94,6 @@
             this.Controls.Add(this.buttonBackToLocations);
             this.Name = "FormYearDisplay";
             this.Text = "Weather Data Management Program";
-            this.Load += new System.EventHandler(this.FormYearDisplay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewYears)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
