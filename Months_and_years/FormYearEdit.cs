@@ -14,7 +14,7 @@ namespace Months_and_years
             location = index;
         } // Puts the passed data into statics for this class, then calls other initialisation functions (InitialiseComponents, in this case.)
 
-        private void buttonBackToYears_Click(object sender, EventArgs e)
+        private void ButtonBackToYears_Click(object sender, EventArgs e)
         {
             var formYearDisplay = new FormYearDisplay(locations, location);
             formYearDisplay.Location = this.Location;
@@ -23,7 +23,7 @@ namespace Months_and_years
             formYearDisplay.Show();
         } // Creates a copy of the previous form (year display) and sets it to the same location as this form, with the same information as this form has. 
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -35,116 +35,45 @@ namespace Months_and_years
 
                 #region reading months
 
-                Month january = new Month();
-                january.handleIdentity = 1;
-                january.handleMaximumTemperature = Convert.ToSingle(textBoxJMX.Text);
-                january.handleMinimumTemperature = Convert.ToSingle(textBoxJMI.Text);
-                january.handleDaysOfAirFrost = Convert.ToSingle(textBoxJAF.Text);
-                january.handleMillimitersOfRainfall = Convert.ToSingle(textBoxJRF.Text);
-                january.handleHoursOfSunshine = Convert.ToSingle(textBoxJS.Text);
-                savedMonths[0] = january;
+                TextBox[] january = new TextBox[5] { textBoxJMX, textBoxJMI, textBoxJAF, textBoxJRF, textBoxJS };
+                savedMonths[0] = ReadTextBoxesToMonth(january, 1);
 
-                Month february = new Month();
-                february.handleIdentity = 2;
-                february.handleMaximumTemperature = Convert.ToSingle(textBoxFMX.Text);
-                february.handleMinimumTemperature = Convert.ToSingle(textBoxFMI.Text);
-                february.handleDaysOfAirFrost = Convert.ToSingle(textBoxFAF.Text);
-                february.handleMillimitersOfRainfall = Convert.ToSingle(textBoxFRF.Text);
-                february.handleHoursOfSunshine = Convert.ToSingle(textBoxFS.Text);
-                savedMonths[1] = february;
+                TextBox[] february = new TextBox[5] { textBoxFMX, textBoxFMI, textBoxFAF, textBoxFRF, textBoxFS };
+                savedMonths[1] = ReadTextBoxesToMonth(february, 2);
 
-                Month march = new Month();
-                march.handleIdentity = 3;
-                march.handleMaximumTemperature = Convert.ToSingle(textBoxMMX.Text);
-                march.handleMinimumTemperature = Convert.ToSingle(textBoxMMI.Text);
-                march.handleDaysOfAirFrost = Convert.ToSingle(textBoxMAF.Text);
-                march.handleMillimitersOfRainfall = Convert.ToSingle(textBoxMRF.Text);
-                march.handleHoursOfSunshine = Convert.ToSingle(textBoxMS.Text);
-                savedMonths[2] = march;
+                TextBox[] march = new TextBox[5] { textBoxMMX, textBoxMMI, textBoxMAF, textBoxMRF, textBoxMS };
+                savedMonths[2] = ReadTextBoxesToMonth(march, 3);
 
-                Month april = new Month();
-                april.handleIdentity = 4;
-                april.handleMaximumTemperature = Convert.ToSingle(textBoxAMX.Text);
-                april.handleMinimumTemperature = Convert.ToSingle(textBoxAMI.Text);
-                april.handleDaysOfAirFrost = Convert.ToSingle(textBoxAAF.Text);
-                april.handleMillimitersOfRainfall = Convert.ToSingle(textBoxARF.Text);
-                april.handleHoursOfSunshine = Convert.ToSingle(textBoxAS.Text);
-                savedMonths[3] = april;
+                TextBox[] april = new TextBox[5] { textBoxAMX, textBoxAMI, textBoxAAF, textBoxARF, textBoxAS };
+                savedMonths[3] = ReadTextBoxesToMonth(april, 4);
 
-                Month may = new Month();
-                may.handleIdentity = 5;
-                may.handleMaximumTemperature = Convert.ToSingle(textBoxMAMX.Text);
-                may.handleMinimumTemperature = Convert.ToSingle(textBoxMAMI.Text);
-                may.handleDaysOfAirFrost = Convert.ToSingle(textBoxMAAF.Text);
-                may.handleMillimitersOfRainfall = Convert.ToSingle(textBoxMARF.Text);
-                may.handleHoursOfSunshine = Convert.ToSingle(textBoxMAS.Text);
-                savedMonths[4] = may;
+                TextBox[] may = new TextBox[5] { textBoxMAMX, textBoxMAMI, textBoxMAAF, textBoxMARF, textBoxMAS };
+                savedMonths[4] = ReadTextBoxesToMonth(may, 5);
 
-                Month june = new Month();
-                june.handleIdentity = 6;
-                june.handleMaximumTemperature = Convert.ToSingle(textBoxJUNMX.Text);
-                june.handleMinimumTemperature = Convert.ToSingle(textBoxJUNMI.Text);
-                june.handleDaysOfAirFrost = Convert.ToSingle(textBoxJUNAF.Text);
-                june.handleMillimitersOfRainfall = Convert.ToSingle(textBoxJUNRF.Text);
-                june.handleHoursOfSunshine = Convert.ToSingle(textBoxJUNS.Text);
-                savedMonths[5] = june;
+                TextBox[] june = new TextBox[5] { textBoxJUNMX, textBoxJUNMI, textBoxJUNAF, textBoxJUNRF, textBoxJUNS };
+                savedMonths[5] = ReadTextBoxesToMonth(june, 6);
 
-                Month july = new Month();
-                july.handleIdentity = 7;
-                july.handleMaximumTemperature = Convert.ToSingle(textBoxJULMX.Text);
-                july.handleMinimumTemperature = Convert.ToSingle(textBoxJULMI.Text);
-                july.handleDaysOfAirFrost = Convert.ToSingle(textBoxJULAF.Text);
-                july.handleMillimitersOfRainfall = Convert.ToSingle(textBoxJULRF.Text);
-                july.handleHoursOfSunshine = Convert.ToSingle(textBoxJULS.Text);
-                savedMonths[6] = july;
+                TextBox[] july = new TextBox[5] { textBoxJULMX, textBoxJULMI, textBoxJULAF, textBoxJULRF, textBoxJULS };
+                savedMonths[6] = ReadTextBoxesToMonth(july,7);
 
-                Month august = new Month();
-                august.handleIdentity = 8;
-                august.handleMaximumTemperature = Convert.ToSingle(textBoxAUMX.Text);
-                august.handleMinimumTemperature = Convert.ToSingle(textBoxAUMI.Text);
-                august.handleDaysOfAirFrost = Convert.ToSingle(textBoxAUAF.Text);
-                august.handleMillimitersOfRainfall = Convert.ToSingle(textBoxAURF.Text);
-                august.handleHoursOfSunshine = Convert.ToSingle(textBoxAUS.Text);
-                savedMonths[7] = august;
+                TextBox[] august = new TextBox[5] { textBoxAUMX, textBoxAUMI, textBoxAUAF, textBoxAURF, textBoxAUS };
+                savedMonths[7] = ReadTextBoxesToMonth(august,8);
 
-                Month september = new Month();
-                september.handleIdentity = 9;
-                september.handleMaximumTemperature = Convert.ToSingle(textBoxSMX.Text);
-                september.handleMinimumTemperature = Convert.ToSingle(textBoxSMI.Text);
-                september.handleDaysOfAirFrost = Convert.ToSingle(textBoxSAF.Text);
-                september.handleMillimitersOfRainfall = Convert.ToSingle(textBoxSRF.Text);
-                september.handleHoursOfSunshine = Convert.ToSingle(textBoxSS.Text);
-                savedMonths[8] = september;
+                TextBox[] september = new TextBox[5] { textBoxSMX, textBoxSMI, textBoxSAF, textBoxSRF, textBoxSS };
+                savedMonths[8] = ReadTextBoxesToMonth(september, 9);
 
-                Month october = new Month();
-                october.handleIdentity = 10;
-                october.handleMaximumTemperature = Convert.ToSingle(textBoxOMI.Text);
-                october.handleMinimumTemperature = Convert.ToSingle(textBoxOMI.Text);
-                october.handleDaysOfAirFrost = Convert.ToSingle(textBoxOAF.Text);
-                october.handleMillimitersOfRainfall = Convert.ToSingle(textBoxORF.Text);
-                october.handleHoursOfSunshine = Convert.ToSingle(textBoxOS.Text);
-                savedMonths[9] = october;
+                TextBox[] october = new TextBox[5] { textBoxOMI, textBoxOMI, textBoxOAF, textBoxORF, textBoxOS };
+                savedMonths[9] = ReadTextBoxesToMonth(october, 10);
 
-                Month november = new Month();
-                november.handleIdentity = 11;
-                november.handleMaximumTemperature = Convert.ToSingle(textBoxNMX.Text);
-                november.handleMinimumTemperature = Convert.ToSingle(textBoxNMI.Text);
-                november.handleDaysOfAirFrost = Convert.ToSingle(textBoxNAF.Text);
-                november.handleMillimitersOfRainfall = Convert.ToSingle(textBoxNRF.Text);
-                november.handleHoursOfSunshine = Convert.ToSingle(textBoxNS.Text);
-                savedMonths[10] = november;
+                TextBox[] november = new TextBox[5] { textBoxNMX, textBoxNMI, textBoxNAF, textBoxNRF, textBoxNS };
+                savedMonths[10] = ReadTextBoxesToMonth(november, 11);
 
-                Month december = new Month();
-                december.handleIdentity = 12;
-                december.handleMaximumTemperature = Convert.ToSingle(textBoxDMX.Text);
-                december.handleMinimumTemperature = Convert.ToSingle(textBoxDMI.Text);
-                december.handleDaysOfAirFrost = Convert.ToSingle(textBoxDAF.Text);
-                december.handleMillimitersOfRainfall = Convert.ToSingle(textBoxDRF.Text);
-                december.handleHoursOfSunshine = Convert.ToSingle(textBoxDS.Text);
-                savedMonths[11] = december;
+                TextBox[] december = new TextBox[5] { textBoxDMX, textBoxDMI, textBoxDAF, textBoxDRF, textBoxDS };
+                savedMonths[11] = ReadTextBoxesToMonth(december, 12);
 
                 #endregion 
-                // The above mess is needed as I used textboxes rather than a grid I could iterate through. I did this for user experience! 
+                // I'm not 100% happy with this; I'd have prefered to declare the textboxes in an array rather than put them in one here. However, to do that I'd have to touch autogenerated code.
+                // Visual studio won't let me do that; it overwrites my changes at the slightest provocation. So, since I'm not using a gridView for the sake of UX, I think this is my best option.
 
                 savedYear.handleMonths = savedMonths;
 
@@ -166,6 +95,19 @@ namespace Months_and_years
             }
 
         } // Saves the data entered into this form into a new year, using the Location class's AddYear function.
-      
+
+        private Month ReadTextBoxesToMonth(TextBox[] monthTextBoxes, int identifier)
+        {
+            Month month = new Month();
+            month.handleIdentity = identifier;
+            month.handleMaximumTemperature = Convert.ToSingle(monthTextBoxes[0].Text);
+            month.handleMinimumTemperature = Convert.ToSingle(monthTextBoxes[1].Text);
+            month.handleDaysOfAirFrost = Convert.ToSingle(monthTextBoxes[2].Text);
+            month.handleMillimitersOfRainfall = Convert.ToSingle(monthTextBoxes[3].Text);
+            month.handleHoursOfSunshine = Convert.ToSingle(monthTextBoxes[4].Text);
+            return month;
+        }
+
     }
+
 }

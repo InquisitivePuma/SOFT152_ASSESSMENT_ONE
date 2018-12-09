@@ -150,7 +150,7 @@
             this.buttonBackToLocations.TabIndex = 19;
             this.buttonBackToLocations.Text = "Back";
             this.buttonBackToLocations.UseVisualStyleBackColor = true;
-            this.buttonBackToLocations.Click += new System.EventHandler(this.buttonBackToYears_Click);
+            this.buttonBackToLocations.Click += new System.EventHandler(this.ButtonBackToYears_Click);
             // 
             // labelMaxTemp1
             // 
@@ -744,7 +744,7 @@
             this.buttonSaveYear.TabIndex = 168;
             this.buttonSaveYear.Text = "    Save         New      Year";
             this.buttonSaveYear.UseVisualStyleBackColor = true;
-            this.buttonSaveYear.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSaveYear.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // FormYearEdit
             // 
