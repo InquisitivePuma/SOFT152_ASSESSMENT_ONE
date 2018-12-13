@@ -69,5 +69,27 @@ namespace Months_and_years
             dataGridViewLocations.Columns[1].DisplayIndex = 1;
         } // Iterates through the relevant data (The locations' names and postcodes) and copies it into row arrays which are then added to the data grid.
 
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string term = textBoxSearch.Text;
+            int searchResult = Utils.SearchDataGridView(term, dataGridViewLocations);
+
+            if (searchResult == -1)
+            {
+                textBoxSearch.Text = "Location not found";
+            }else{
+                dataGridViewLocations.Rows[searchResult].Selected = true;
+            }
+        }
+
+        private void textBoxSearch_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                textBoxSearch.SelectAll();
+            }); 
+            // BeginInvoke is asynchronous, so occurs after the Enter and Click events, meaning that this code is run when the textbox is clicked on while not currently selected.
+            // I know this is a little bit hacky, but it lets me handle this non-core functionality in one line rather than like 40 and if it breaks no-one cares.
+        }
     }
 }

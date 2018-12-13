@@ -76,5 +76,28 @@ namespace Months_and_years
             this.Hide();
             formYearEdit.Show();
         } // Creates a new YearEdit form, passes it the index of the currently selected location and year with the main data structure, and sets it to the current position of the form. 
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string term = textBoxSearch.Text;
+            int searchResult = Utils.SearchDataGridView(term, dataGridViewYears);
+
+            if (searchResult == -1)
+            {
+                textBoxSearch.Text = "Location not found";
+            }
+            else
+            {
+                dataGridViewYears.Rows[searchResult].Selected = true;
+            }
+        }
+
+        private void textBoxSearch_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                textBoxSearch.SelectAll();
+            });
+        }
     }
 }

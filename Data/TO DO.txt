@@ -1,0 +1,3 @@
+Add graphing functionality for month data (hours of sunshine, minimum temparature, ect) over a flexible number of years. 
+ - further description of the above: literally just a line graph. Select the stats with checkboxes, 
+   type a number of years, hit a button, graph. Gets a form to itself, accessed from the location display form.

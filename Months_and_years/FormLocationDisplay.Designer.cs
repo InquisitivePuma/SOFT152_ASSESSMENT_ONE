@@ -31,7 +31,9 @@
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonOpenLocation = new System.Windows.Forms.Button();
             this.dataGridViewLocations = new System.Windows.Forms.DataGridView();
-            this.labelLocations = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonOpenLocationGraphs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocations)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +41,7 @@
             // 
             this.buttonBack.Location = new System.Drawing.Point(12, 12);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(40, 23);
+            this.buttonBack.Size = new System.Drawing.Size(64, 23);
             this.buttonBack.TabIndex = 0;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -64,22 +66,42 @@
             this.dataGridViewLocations.Size = new System.Drawing.Size(776, 342);
             this.dataGridViewLocations.TabIndex = 2;
             // 
-            // labelLocations
+            // textBoxSearch
             // 
-            this.labelLocations.AutoSize = true;
-            this.labelLocations.Location = new System.Drawing.Point(188, 17);
-            this.labelLocations.Name = "labelLocations";
-            this.labelLocations.Size = new System.Drawing.Size(430, 13);
-            this.labelLocations.TabIndex = 3;
-            this.labelLocations.Text = "Select a location in the below table in order to view or edit additional data for" +
-    " that location.";
+            this.textBoxSearch.Location = new System.Drawing.Point(535, 15);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(172, 20);
+            this.textBoxSearch.TabIndex = 3;
+            this.textBoxSearch.Text = "Enter Location Name";
+            this.textBoxSearch.Enter += new System.EventHandler(this.textBoxSearch_Enter);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(713, 12);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 4;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // buttonOpenLocationGraphs
+            // 
+            this.buttonOpenLocationGraphs.Location = new System.Drawing.Point(82, 12);
+            this.buttonOpenLocationGraphs.Name = "buttonOpenLocationGraphs";
+            this.buttonOpenLocationGraphs.Size = new System.Drawing.Size(447, 23);
+            this.buttonOpenLocationGraphs.TabIndex = 5;
+            this.buttonOpenLocationGraphs.Text = "Cleck here for awesome bonus graphs which don\'t exist yet.";
+            this.buttonOpenLocationGraphs.UseVisualStyleBackColor = true;
             // 
             // FormLocationDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelLocations);
+            this.Controls.Add(this.buttonOpenLocationGraphs);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.dataGridViewLocations);
             this.Controls.Add(this.buttonOpenLocation);
             this.Controls.Add(this.buttonBack);
@@ -96,6 +118,8 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonOpenLocation;
         private System.Windows.Forms.DataGridView dataGridViewLocations;
-        private System.Windows.Forms.Label labelLocations;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonOpenLocationGraphs;
     }
 }
